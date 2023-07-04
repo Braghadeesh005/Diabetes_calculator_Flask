@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Diabetes Calculator</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="main">
+        <h1 class="heading">Diabetes Calculator</h1>
+        
+        
+        <form action="/" method="POST">
+            <div class="form">
+           <div class="item"> <div class="label"><label>Blood Glucose Level</label></div><div class="input"><input type="number" class="input2" name="a" id="a" step="any" ></div><br></div>
+           <div class="item"> <div class="label"><label>Blood Presure</label></div><div class="input"><input type="number" class="input2" name="b" id="b" step="any" ></div><br></div>
+           <div class="item"> <div class="label"><label>Blood Insulin Level</label></div><div class="input"><input type="number" class="input2" name="c" id="c" step="any" ></div><br></div>
+           <div class="item"> <div class="label"><label>Body mass Index</label></div><div class="input"><input type="number" class="input2" name="d" id="d" step="any" ></div><br></div>
+           <div class="item"> <div class="label"><label>DPF</label></div><div class="input"><input type="number" class="input2" name="e" id="e" step="any" ></div><br></div>
+           <div class="item"> <div class="label"><label>Age</label></div><div class="input"><input type="number" class="input2" name="f" id="f" step="any" ></div><br></div>
+            </div>
+            <div class="heading2">
+            {% if output %}
+            <div class="centering"><p class="heading">{{ output }}</p></div>
+            {% endif %}
+            {% if error_message %}
+            <div class="centering"><p class="heading">{{ error_message }}</p></div>
+            {% endif %}
+            <div class="centering"><input class="submit" type="submit" value="predict"></div>
+            </div>
+        </form>
+
+
+        
+
+    </div>
+{% endblock %}
